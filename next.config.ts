@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Beta build system - try default Next.js output first
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
 };
 
 export default nextConfig;
