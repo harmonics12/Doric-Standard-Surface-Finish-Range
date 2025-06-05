@@ -133,6 +133,21 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  /* Remove any pseudo-element overlays */
+  *::before,
+  *::after {
+    display: none !important;
+  }
+  
+  /* Remove common overlay patterns */
+  [class*="overlay"],
+  [class*="backdrop"],
+  [class*="loading"],
+  .modal-backdrop {
+    display: none !important;
+  }
+  
   body {
     background-color: white !important;
     color: black !important;
@@ -142,6 +157,12 @@
   h1, h2, h3, h4, h5, h6, p, div, span {
     color: black !important;
     opacity: 1 !important;
+  }
+  
+  /* Ensure main content is visible */
+  main, [role="main"], #root, #__next {
+    opacity: 1 !important;
+    background: transparent !important;
   }
 }
 
