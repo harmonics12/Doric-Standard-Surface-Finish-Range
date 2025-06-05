@@ -134,7 +134,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-white text-black;
+    background-color: white !important;
+    color: black !important;
+    opacity: 1 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, div, span {
+    color: black !important;
+    opacity: 1 !important;
   }
 }
 
