@@ -1,28 +1,26 @@
 import type { NextConfig } from "next";
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true
   },
-  // Disable server-side features since we're deploying to Cloudflare Pages
+  // Disable server-side features for static export
+  experimental: {
+    esmExternals: 'loose'
+  },
+  // Disable problematic CSS optimizations
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Disable problematic CSS optimizations
-  experimental: {
-    optimizeCss: false,
-    optimizePackageImports: [],
-  },
   // Disable webpack optimizations that might affect CSS
   webpack: (config) => {
-    config.optimization.splitChunks = false;
+    config.optimization = {
+      ...config.optimization,
+      sideEffects: false,
+    };
     return config;
   },
 };

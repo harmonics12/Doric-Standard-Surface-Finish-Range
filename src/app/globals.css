@@ -130,40 +130,28 @@
 }
 
 @layer base {
-  /* Remove only backdrop filters and overlays, preserve functionality */
+  /* Fix Next.js hydration issue - force show content that has [hidden] attribute */
+  [hidden] {
+    display: block !important;
+  }
+  
+  /* Prevent Cloudflare minification issues with hydration */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Only remove backdrop filters that cause the white overlay */
   html, body {
-    filter: none !important;
     backdrop-filter: none !important;
-    background: white !important;
-    opacity: 1 !important;
   }
   
-  /* Target only overlay-related pseudo-elements, not all */
-  [class*="overlay"]::before,
-  [class*="overlay"]::after,
-  [class*="backdrop"]::before,
-  [class*="backdrop"]::after {
-    display: none !important;
-    content: none !important;
-  }
-  
-  /* Remove common overlay patterns */
+  /* Remove common overlay patterns that might cause white sheet */
   [class*="overlay"],
-  [class*="backdrop"],
+  [class*="backdrop"]:not([class*="color"]):not([class*="swatch"]),
   [class*="loading"],
-  [class*="modal"],
-  [class*="sheet"],
-  [class*="scrim"],
   .modal-backdrop {
     display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-  
-  /* Force remove any full-page overlays */
-  div[style*="position: fixed"],
-  div[style*="position: absolute"][style*="top: 0"][style*="left: 0"] {
-    z-index: -1 !important;
   }
   
   * {
@@ -171,55 +159,7 @@
   }
   
   body {
-    background-color: white !important;
-    color: black !important;
-    opacity: 1 !important;
-  }
-  
-  /* Header section should have white text */
-  header h1,
-  header h2,
-  header p,
-  .bg-\[#003876\] h1,
-  .bg-\[#003876\] h2,
-  .bg-\[#003876\] p,
-  .bg-\[#003876\] *,
-  [style*="background:#003876"] *,
-  [style*="background: #003876"] * {
-    color: white !important;
-  }
-  
-  /* Main content area - be selective about black text */
-  main h1, 
-  main h2, 
-  main h3, 
-  main h4, 
-  main h5, 
-  main h6, 
-  main p,
-  .bg-white h1,
-  .bg-white h2,
-  .bg-white h3,
-  .bg-white p {
-    color: black !important;
-    opacity: 1 !important;
-  }
-  
-  /* Preserve order code functionality - don't override these */
-  [class*="order"],
-  [class*="code"],
-  .order-code,
-  small {
-    color: inherit !important;
-    opacity: 1 !important;
-  }
-  
-  /* Ensure main content is visible */
-  main, [role="main"], #root, #__next {
-    opacity: 1 !important;
-    background: transparent !important;
-    filter: none !important;
-    backdrop-filter: none !important;
+    @apply bg-white text-black;
   }
 }
 
