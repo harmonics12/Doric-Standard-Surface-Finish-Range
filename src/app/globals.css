@@ -130,22 +130,51 @@
 }
 
 @layer base {
+  /* Remove all visual effects */
   * {
+    filter: none !important;
+    backdrop-filter: none !important;
+    mask: none !important;
+    clip-path: none !important;
+    mix-blend-mode: normal !important;
     @apply border-border outline-ring/50;
+  }
+  
+  /* Force remove any overlays */
+  html, body {
+    filter: none !important;
+    backdrop-filter: none !important;
+    background: white !important;
+    opacity: 1 !important;
   }
   
   /* Remove any pseudo-element overlays */
   *::before,
   *::after {
     display: none !important;
+    content: none !important;
+    background: none !important;
   }
   
   /* Remove common overlay patterns */
   [class*="overlay"],
   [class*="backdrop"],
   [class*="loading"],
+  [class*="modal"],
+  [class*="sheet"],
+  [class*="scrim"],
   .modal-backdrop {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  /* Force visibility on all elements */
+  div, section, main, article, header, nav, aside, footer {
+    filter: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    background: transparent !important;
   }
   
   body {
@@ -154,15 +183,18 @@
     opacity: 1 !important;
   }
   
-  h1, h2, h3, h4, h5, h6, p, div, span {
+  h1, h2, h3, h4, h5, h6, p, div, span, a {
     color: black !important;
     opacity: 1 !important;
+    filter: none !important;
   }
   
   /* Ensure main content is visible */
   main, [role="main"], #root, #__next {
     opacity: 1 !important;
     background: transparent !important;
+    filter: none !important;
+    backdrop-filter: none !important;
   }
 }
 
