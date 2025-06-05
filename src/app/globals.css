@@ -2,6 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+/* AGGRESSIVE FIX - REMOVE ALL POSSIBLE OVERLAYS AND SHOW CONTENT */
+
+/* Remove all gradient overlays */
+*[class*="gradient"] {
+  display: none !important;
+}
+
+/* Remove all absolute positioned overlays */
+.absolute {
+  position: relative !important;
+}
+
+.absolute.inset-0,
+.absolute.inset-x-0,
+.absolute.inset-y-0 {
+  display: none !important;
+}
+
+/* Remove any fixed positioned overlays */
+.fixed {
+  display: none !important;
+}
+
+/* Force all content to be visible */
+* {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+[hidden] {
+  display: block !important;
+}
+
+/* Force background to be white and text to be black */
+body {
+  background: white !important;
+  color: black !important;
+}
+
+/* Make sure main content is visible */
+main, 
+section, 
+div {
+  background: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force headings to be visible */
+h1, h2, h3, h4, h5, h6 {
+  color: black !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force any z-index issues */
+.z-50, .z-40, .z-30, .z-20, .z-10 {
+  z-index: -1 !important;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
