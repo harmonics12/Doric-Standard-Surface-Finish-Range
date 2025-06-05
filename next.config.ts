@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: false,
   },
+  // Configure PostCSS
+  postcss: {
+    plugins: {
+      'tailwindcss': {},
+      'autoprefixer': {},
+      'postcss-preset-env': {}
+    }
+  }
 };
 
 export default nextConfig;
