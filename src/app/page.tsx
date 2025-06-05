@@ -11,9 +11,9 @@ export default function Home() {
       {/* Header Section */}
       <div className="relative overflow-hidden bg-[#003876] text-white">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.05)_1px,transparent_0)]" style={{ backgroundSize: '24px 24px' }}></div>
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
-          <div className="flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
-            <div className="w-[200px] sm:w-[300px] h-[60px] sm:h-[90px] flex-shrink-0">
+        <div className="relative max-w-6xl mx-auto px-8 py-16">
+          <div className="flex items-center gap-8">
+            <div className="w-[300px] h-[90px] flex-shrink-0">
               <Image
                 src="/images/doric-logo.svg"
                 alt="Doric Logo"
@@ -24,10 +24,10 @@ export default function Home() {
               />
             </div>
             <div className="space-y-2">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter md:text-5xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
                 Standard Surface Finish Range
               </h1>
-              <p className="max-w-3xl text-slate-200 text-base sm:text-lg">
+              <p className="max-w-3xl text-slate-200 text-lg">
                 Premium architectural finishes engineered for superior durability and exceptional aesthetics. Trusted by leading window fabricators and installers across Australia since 1972.
               </p>
             </div>
