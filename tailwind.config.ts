@@ -6,6 +6,12 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'bg-background',
+    'text-foreground',
+    'border-border',
+    'outline-ring/50',
+  ],
   theme: {
     extend: {
       backgroundImage: {
