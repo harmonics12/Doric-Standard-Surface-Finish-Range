@@ -11,4 +11,7 @@ bucket = ".next"
 entry-point = "."
 
 [env.production]
-workers_dev = true 
+workers_dev = true
+
+[pages]
+pages_build_output_dir = ".vercel/output/static" 

@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Disable server-side features since we're deploying to Cloudflare Pages
   typescript: {
     ignoreBuildErrors: true,
   },
