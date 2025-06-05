@@ -18,7 +18,13 @@ const nextConfig: NextConfig = {
   // Disable problematic CSS optimizations
   experimental: {
     optimizeCss: false,
-  }
+    optimizePackageImports: [],
+  },
+  // Disable webpack optimizations that might affect CSS
+  webpack: (config) => {
+    config.optimization.splitChunks = false;
+    return config;
+  },
 };
 
 export default nextConfig;
