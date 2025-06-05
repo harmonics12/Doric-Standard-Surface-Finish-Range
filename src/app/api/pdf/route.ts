@@ -1,44 +1,89 @@
 import { NextResponse } from 'next/server';
-import puppeteer from 'puppeteer-core';
-import chrome from 'chrome-aws-lambda';
+import { renderToStream, Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { paintFinishes } from '@/lib/colors';
+import React from 'react';
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'column',
+    backgroundColor: '#ffffff',
+    padding: 30,
+  },
+  section: {
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 12,
+    marginBottom: 5,
+  },
+  colorGroup: {
+    marginBottom: 30,
+  },
+  colorItem: {
+    marginBottom: 15,
+  },
+});
+
+const MyDocument: React.FC = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text style={styles.title}>Doric Standard Surface Finish Range</Text>
+        <Text style={styles.text}>
+          Premium architectural finishes engineered for superior durability and exceptional aesthetics.
+          Trusted by leading window fabricators and installers across Australia since 1972.
+        </Text>
+      </View>
+      
+      {paintFinishes.map((group, index) => (
+        <View key={group.name} style={styles.colorGroup}>
+          <Text style={styles.subtitle}>{index + 1}. {group.name}</Text>
+          <Text style={styles.text}>{group.description}</Text>
+          
+          {group.finishes.map((finish) => (
+            <View key={finish.code} style={styles.colorItem}>
+              <Text style={styles.text}>Order Code: {finish.code}</Text>
+              <Text style={styles.text}>{finish.description}</Text>
+              <Text style={styles.text}>Sheen Level: {finish.sheenLevel}</Text>
+              {finish.duluxMatch && (
+                <Text style={styles.text}>Dulux Match: {finish.duluxMatch}</Text>
+              )}
+              {finish.colorbondMatch && (
+                <Text style={styles.text}>Colorbond: {finish.colorbondMatch}</Text>
+              )}
+              {finish.lightReflectanceValue && (
+                <Text style={styles.text}>LRV: {finish.lightReflectanceValue}%</Text>
+              )}
+              {finish.notes && (
+                <Text style={styles.text}>{finish.notes}</Text>
+              )}
+            </View>
+          ))}
+        </View>
+      ))}
+    </Page>
+  </Document>
+);
 
 export async function GET() {
   try {
-    const browser = await puppeteer.launch({
-      args: chrome.args,
-      executablePath: process.env.CHROME_PATH || await chrome.executablePath,
-      headless: true,
-    });
-
-    const page = await browser.newPage();
+    const stream = await renderToStream(<MyDocument />);
+    const chunks: Buffer[] = [];
     
-    // Set viewport to A4 size
-    await page.setViewport({
-      width: 1240,
-      height: 1754,
-      deviceScaleFactor: 2,
-    });
-
-    // Navigate to the page
-    await page.goto(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000', {
-      waitUntil: 'networkidle0',
-    });
-
-    // Generate PDF
-    const pdf = await page.pdf({
-      format: 'A4',
-      printBackground: true,
-      margin: {
-        top: '20px',
-        right: '20px',
-        bottom: '20px',
-        left: '20px',
-      },
-    });
-
-    await browser.close();
-
-    // Return the PDF
+    for await (const chunk of stream) {
+      chunks.push(chunk);
+    }
+    
+    const pdf = Buffer.concat(chunks);
+    
     return new NextResponse(pdf, {
       headers: {
         'Content-Type': 'application/pdf',
