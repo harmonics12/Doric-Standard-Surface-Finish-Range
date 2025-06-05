@@ -124,6 +124,12 @@
     outline-color: var(--color-ring);
     opacity: 0.5;
   }
+  .bg-background {
+    background-color: var(--color-background);
+  }
+  .text-foreground {
+    color: var(--color-foreground);
+  }
 }
 
 @layer base {
