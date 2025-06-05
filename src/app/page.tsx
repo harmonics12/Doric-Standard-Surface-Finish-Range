@@ -1,3 +1,5 @@
+'use client';
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { paintFinishes } from "@/lib/colors";
@@ -9,9 +11,9 @@ export default function Home() {
       {/* Header Section */}
       <div className="relative overflow-hidden bg-[#003876] text-white">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.05)_1px,transparent_0)]" style={{ backgroundSize: '24px 24px' }}></div>
-        <div className="relative max-w-6xl mx-auto px-8 py-16">
-          <div className="flex items-center gap-8">
-            <div className="w-[300px] h-[90px] flex-shrink-0">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
+          <div className="flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
+            <div className="w-[200px] sm:w-[300px] h-[60px] sm:h-[90px] flex-shrink-0">
               <Image
                 src="/images/doric-logo.svg"
                 alt="Doric Logo"
@@ -22,36 +24,12 @@ export default function Home() {
               />
             </div>
             <div className="space-y-2">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter md:text-5xl">
                 Standard Surface Finish Range
               </h1>
-              <p className="max-w-3xl text-slate-200 text-lg">
+              <p className="max-w-3xl text-slate-200 text-base sm:text-lg">
                 Premium architectural finishes engineered for superior durability and exceptional aesthetics. Trusted by leading window fabricators and installers across Australia since 1972.
               </p>
-              <div className="mt-4">
-                <a
-                  href="/api/pdf"
-                  className="inline-flex items-center px-4 py-2 bg-white text-[#003876] rounded-md hover:bg-opacity-90 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    className="w-5 h-5 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  Download PDF
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -60,7 +38,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-8 py-12">
         {paintFinishes.map((group, index) => (
-          <div key={group.name} className="mb-16">
+          <div key={group.name} className="mb-16 color-group">
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-slate-800 mb-2">
                 {index + 1}. {group.name}
@@ -132,6 +110,7 @@ export default function Home() {
                             )}
                           </div>
                         </div>
+
                         {finish.notes && (
                           <p className="text-slate-600 text-sm mt-4 leading-relaxed border-t border-slate-100 pt-4">
                             {finish.notes}
