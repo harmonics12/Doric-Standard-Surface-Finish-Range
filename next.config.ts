@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Disable problematic CSS optimizations
+  experimental: {
+    optimizeCss: false,
+  },
 };
 
 export default nextConfig;
