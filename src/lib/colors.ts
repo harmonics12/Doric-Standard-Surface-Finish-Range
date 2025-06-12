@@ -79,7 +79,7 @@ export const paintFinishes: ColorGroup[] = [
         rgb: "rgb(44, 44, 44)",
         duluxMatch: "Black Satin™",
         lightReflectanceValue: 6,
-        notes: "Rich, deep satin black with advanced light absorption technology. Features exceptional durability and a smooth, uniform finish."
+        notes: "Advanced light absorption technology with exceptional durability and a smooth, uniform finish."
       },
       {
         code: "FSBC",
@@ -88,7 +88,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#1A1A1A",
         rgb: "rgb(26, 26, 26)",
         lightReflectanceValue: 4,
-        notes: "Deep satin black finish with superior coverage and excellent mar resistance. Perfect for contemporary architectural applications."
+        notes: "Superior coverage and excellent scratch resistance. Perfect for contemporary architectural applications."
       },
       {
         code: "FFM",
