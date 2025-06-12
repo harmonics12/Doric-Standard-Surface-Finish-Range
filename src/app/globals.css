@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Print styles for color preservation */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Force all background colors to print */
+  div[style*="background"] {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    background-color-adjust: exact !important;
+  }
+  
+  /* SVG color preservation */
+  svg rect {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -74,6 +101,15 @@
 @layer base {
   body {
     @apply bg-white text-slate-900;
+  }
+}
+
+@layer utilities {
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
