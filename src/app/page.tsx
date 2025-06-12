@@ -54,7 +54,7 @@ export default function Home() {
                   className="group/item relative bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 overflow-hidden w-full max-w-md h-full flex flex-col p-0"
                 >
                   {/* Order Code at the very top of card */}
-                  <div className="px-1.5 pt-1.5 pb-1 bg-white rounded-t-xl">
+                  <div className="px-3 pt-2 pb-1 bg-white rounded-t-xl">
                     <div className="text-sm font-mono text-gray-800 flex items-center justify-between">
                       <span className="text-gray-600">Order Code:</span> 
                       <span className="font-semibold">{finish.code}</span>
@@ -73,13 +73,13 @@ export default function Home() {
                   </div>
 
                   {/* Content */}
-                  <div className="px-1.5 py-1 flex-1 flex flex-col">
-                    <div className="space-y-1">
+                  <div className="px-3 py-2 flex-1 flex flex-col">
+                    <div className="space-y-2">
                       <div>
-                        <h3 className="text-base font-medium text-slate-800 leading-tight mb-1">
+                        <h3 className="text-base font-medium text-slate-800 leading-tight mb-2">
                           {finish.description}
                         </h3>
-                        <div className="flex items-center justify-between mb-0.5">
+                        <div className="flex items-center justify-between mb-1">
                           <Badge 
                             className={`text-xs font-medium border-0 ${
                               finish.sheenLevel.toLowerCase().includes('gloss') ? 'bg-slate-900 hover:bg-slate-800 text-white' : 
@@ -101,8 +101,8 @@ export default function Home() {
                     </div>
 
                     {finish.notes && (
-                      <div className="mt-1 pt-1 border-t border-slate-100 flex-1 flex flex-col justify-start">
-                        <p className="text-slate-600 text-xs leading-tight line-clamp-4">
+                      <div className="mt-2 pt-2 border-t border-slate-100 flex-1 flex flex-col justify-start">
+                        <p className="text-slate-600 text-sm leading-relaxed line-clamp-4">
                           {finish.notes}
                         </p>
                       </div>
