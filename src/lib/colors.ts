@@ -29,7 +29,7 @@ export const paintFinishes: ColorGroup[] = [
         rgb: "rgb(251, 252, 252)",
         duluxMatch: "Dulux Vivid White™",
         lightReflectanceValue: 89,
-        notes: "Premium white with exceptional coverage and UV resistance, featuring advanced light-diffusing technology for a flawless, uniform appearance."
+        notes: "Premium white with exceptional coverage and UV resistance. Features advanced light-diffusing technology."
       },
       {
         code: "FPR",
@@ -49,7 +49,7 @@ export const paintFinishes: ColorGroup[] = [
         rgb: "rgb(158, 158, 158)",
         duluxMatch: "Dulux Tranquil Retreat™",
         lightReflectanceValue: 42,
-        notes: "Versatile architectural grey with balanced light reflection properties. Engineered for consistent coverage and excellent weathering performance."
+        notes: "Versatile architectural grey with balanced light reflection. Engineered for consistent coverage and weathering performance."
       },
       {
         code: "FSI",
@@ -97,7 +97,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#0F0F0F",
         rgb: "rgb(15, 15, 15)",
         lightReflectanceValue: 3,
-        notes: "Ultra-low reflection matt black for architectural features requiring minimal light reflection and maximum sophistication."
+        notes: "Ultra-low reflection matt black for architectural features requiring minimal light reflection."
       },
       {
         code: "FSU",
@@ -133,7 +133,7 @@ export const paintFinishes: ColorGroup[] = [
         rgb: "rgb(247, 245, 243)",
         duluxMatch: "Dulux Magnolia™",
         lightReflectanceValue: 82,
-        notes: "Elegant off-white with subtle warm undertones. Features excellent coverage and self-leveling properties for premium finishes."
+        notes: "Elegant off-white with subtle warm undertones. Features excellent coverage and self-leveling properties."
       },
       {
         code: "FBW",
@@ -152,7 +152,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#B8860B",
         rgb: "rgb(184, 134, 11)",
         lightReflectanceValue: 35,
-        notes: "Rich golden-brown tone with advanced color stability. Ideal for creating warm, inviting architectural features with excellent durability."
+        notes: "Rich golden-brown tone with advanced color stability. Ideal for creating warm, inviting architectural features."
       },
       {
         code: "FMS",
@@ -240,7 +240,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#E8E8E8",
         rgb: "rgb(232, 232, 232)",
         lightReflectanceValue: 70,
-        notes: "Sophisticated pearl finish with subtle metallic undertones. Features advanced light-diffusing technology for exceptional depth and dimension."
+        notes: "Sophisticated pearl finish with subtle metallic undertones. Features advanced light-diffusing technology."
       },
       {
         code: "FIP",
@@ -250,7 +250,7 @@ export const paintFinishes: ColorGroup[] = [
         rgb: "rgb(192, 192, 192)",
         duluxMatch: "Silver Pearl™",
         lightReflectanceValue: 65,
-        notes: "High-performance metallic finish with advanced light-diffusing technology. Provides exceptional depth and a sophisticated shimmering effect."
+        notes: "High-performance metallic finish with advanced light-diffusing technology. Provides exceptional depth and shimmer."
       },
       {
         code: "FMU",
@@ -259,7 +259,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#D4AF37",
         rgb: "rgb(212, 175, 55)",
         lightReflectanceValue: 45,
-        notes: "Premium metallic finish featuring advanced color-shift technology. Delivers rich metallic appearance with excellent durability."
+        notes: "Premium metallic finish with advanced color-shift technology. Delivers rich metallic appearance with durability."
       },
       {
         code: "FEP",
@@ -268,7 +268,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#8B8680",
         rgb: "rgb(139, 134, 128)",
         lightReflectanceValue: 35,
-        notes: "Sophisticated pewter finish with subtle pearl undertones. Perfect for contemporary architectural applications requiring understated elegance."
+        notes: "Sophisticated pewter finish with subtle pearl undertones. Perfect for contemporary architectural applications."
       }
     ]
   },
@@ -283,7 +283,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#FAFAFA",
         rgb: "rgb(250, 250, 250)",
         lightReflectanceValue: 85,
-        notes: "Advanced textured finish with integrated aggregate technology. Provides excellent surface hiding and weathering properties with premium white base."
+        notes: "Advanced textured finish with integrated aggregate technology. Provides excellent surface hiding and weathering properties."
       },
       {
         code: "FST",
@@ -301,7 +301,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#4A4A4A",
         rgb: "rgb(74, 74, 74)",
         lightReflectanceValue: 12,
-        notes: "Deep textured grey with excellent opacity and superior weathering properties. Perfect for architectural features requiring both visual and tactile interest."
+        notes: "Deep textured grey with excellent opacity and superior weathering properties. Perfect for architectural features."
       },
       {
         code: "FEB",
@@ -310,7 +310,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#1C1C1C",
         rgb: "rgb(28, 28, 28)",
         lightReflectanceValue: 4,
-        notes: "Ultra-deep black textured finish with advanced light absorption. Features exceptional durability and sophisticated tactile properties."
+        notes: "Ultra-deep black textured finish with advanced light absorption. Features exceptional durability and tactile properties."
       }
     ]
   },
@@ -325,7 +325,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#A8A8A8",
         rgb: "rgb(168, 168, 168)",
         lightReflectanceValue: 45,
-        notes: "Sophisticated chrome effect with matte finish. Features advanced metallic pigments and superior scratch resistance for premium applications."
+        notes: "Sophisticated chrome effect with matte finish. Features advanced metallic pigments and superior scratch resistance."
       },
       {
         code: "FLC",
@@ -334,7 +334,7 @@ export const paintFinishes: ColorGroup[] = [
         color: "#B8B8B8",
         rgb: "rgb(184, 184, 184)",
         lightReflectanceValue: 55,
-        notes: "Traditional chrome finish with modern durability. Provides excellent reflectivity and superior color stability for architectural elements."
+        notes: "Traditional chrome finish with modern durability. Provides excellent reflectivity and superior color stability."
       }
     ]
   }
